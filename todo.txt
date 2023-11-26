@@ -1,0 +1,2 @@
+1. use route and names as enums
+    https://rapolas.dev/posts/structure-laravel-routes-with-php-objects/
