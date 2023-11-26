@@ -1,9 +1,9 @@
 {
-    "name": "mikha-dev/sneat-admin",
+    "name": "dev4traders/sneat-admin",
     "description": "sneat admin",
     "type": "library",
-    "keywords": ["dcat", "laravel", "admin", "grid", "form", "laravel admin"],
-    "homepage": "https://github.com/mikha-dev/sneat-admin",
+    "keywords": ["dcat", "laravel", "admin", "grid", "form", "sneat"],
+    "homepage": "https://github.com/dev4tradrs/sneat-admin",
     "license": "MIT",
     "authors": [
         {
