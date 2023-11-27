@@ -1,9 +1,9 @@
 {
-    "name": "dev4traders/sneat-admin",
-    "description": "sneat admin",
+    "name": "dev4traders/prop-admin",
+    "description": "prop admin",
     "type": "library",
-    "keywords": ["dcat", "laravel", "admin", "grid", "form", "sneat"],
-    "homepage": "https://github.com/dev4tradrs/sneat-admin",
+    "keywords": ["dcat", "laravel", "admin", "grid", "form", "prop"],
+    "homepage": "https://github.com/dev4tradrs/prop-admin",
     "license": "MIT",
     "authors": [
         {
