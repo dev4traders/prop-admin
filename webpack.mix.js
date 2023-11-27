@@ -111,7 +111,7 @@ mixAssetsDir('libs/**/!(_)*.scss', (src, dest) =>
 mixAssetsDir('libs/**/*.{png,jpg,jpeg,gif}', (src, dest) => mix.copy(src, dest));
 
 // Images
-mixAssetsDir('images/*', (src, dest) => mix.copy(src, dest));
+mixAssetsDir('img/*', (src, dest) => mix.copy(src, dest));
 
 //Dcat
 mixAssetsDir('dcat/js/dcat-app.js', (src, dest) => mix.js(src, dest));
@@ -126,4 +126,6 @@ mixAssetsDir('fonts/!(_)*.scss', (src, dest) =>
   mix.sass(src, dest.replace(/(\\|\/)scss(\\|\/)/, '$1css$2').replace(/\.scss$/, '.css'), { sassOptions })
 );
 
-mix.copy('node_modules/boxicons/fonts/*', 'resources/dist/fonts/boxicons');
+mix.copy('node_modules/flag-icons/flags/1x1/*', 'resources/dist/fonts/flags/1x1');
+mix.copy('node_modules/flag-icons/flags/4x3/*', 'resources/dist/fonts/flags/4x3');
+mix.copy('node_modules/@fortawesome/fontawesome-free/webfonts/*', 'resources/dist/fonts/fontawesome');

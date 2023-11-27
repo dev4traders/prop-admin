@@ -11,3 +11,4 @@ dist
 /laravel-tests
 *.bak.*
 .DS_Store
+yarn.lock

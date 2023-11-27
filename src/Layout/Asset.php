@@ -16,11 +16,12 @@ class Asset
         '@sneat' => [
             'js' => [
                 '@admin/js/helpers.js',
-                '@admin/js/config.js',
+//                '@admin/js/template-customizer.js',
+                //'@admin/js/config.js',
+                'js/config.js', //todo::fix issue with config mix
             ],
             'css' => [
-                '@admin/css/nprogress.css',
-                '@admin/css/core.css',
+                '@admin/css/core.css'
             ],
         ],
         '@sneat-menu' => [
@@ -29,8 +30,21 @@ class Asset
             ],
         ],
         '@sneat-main' => [
+            'css' => [
+                '@admin/dcat/extra/nprogress.css',
+            ],
             'js' => [
                 '@admin/js/main.js',
+            ],
+        ],
+        // '@sneat-customizer' => [
+        //     'js' => [
+        //         '@admin/js/template-customizer.js',
+        //     ],
+        // ],
+        '@sneat-bootstrap' => [
+            'js' => [
+                '@admin/js/bootstrap.js',
             ],
         ],
         '@sneat-auth' => [
@@ -38,8 +52,14 @@ class Asset
                 '@admin/css/pages/page-auth.css',
             ],
         ],
-        '@boxicons' => [
-            'css'  => '@admin/fonts/boxicons.css',
+        '@popper' => [
+            'js'  => '@admin/libs/popper/popper.js',
+        ],
+        '@fontawesome' => [
+            'css'  => '@admin/fonts/fontawesome.css',
+        ],
+        '@flag-icons' => [
+            'css'  => '@admin/fonts/flag-icons.css',
         ],
         '@nunito' => [
             //https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700
@@ -53,13 +73,16 @@ class Asset
         '@jquery' => [
             'js' => '@admin/libs/jquery/jquery.js',
         ],
+        '@perfect-scrollbar' => [
+            'js' => '@admin/libs/perfect-scrollbar/perfect-scrollbar.js',
+            'js' => '@admin/libs/perfect-scrollbar/perfect-scrollbar.css',
+        ],
         '@datatables' => [
             'css' => [
                 '@admin/libs/datatables-bs5/datatables.bootstrap5.css',
                 '@admin/libs/datatables-responsive-bs5/responsive.bootstrap5.css',
                 '@admin/libs/datatables-buttons-bs5/buttons.bootstrap5.css'
             ]
-            //'@admin/dcat/plugins/tables/datatable/datatables.min.css',
         ],
         '@layer' => [
             'js' => '@admin/dcat/plugins/layer/layer.js',
@@ -97,7 +120,7 @@ class Asset
                 '@admin/dcat/plugins/webuploader/webuploader.min.js',
                 '@admin/dcat/extra/upload.js',
             ],
-    //         'css' => '@admin/dcat/extra/upload.css',
+            'css' => '@admin/dcat/extra/upload.css',
         ],
         '@editor-md' => [
             'js' => [
@@ -124,7 +147,14 @@ class Asset
                 '@admin/dcat/plugins/editor-md/css/editormd.min.css',
             ],
         ],
-
+        '@apex-charts' => [
+            'js' => '@admin/libs/apex-charts/apexcharts.js',
+            'css' => '@admin/libs/apex-charts/apexcharts.css',
+        ],
+        '@fontawesome-iconpicker' => [
+            'js' => '@admin/dcat/plugins/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.js',
+            'css' => '@admin/dcat/plugins/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.min.css',
+        ],
     //     '@theme' => [
     //         'js' => [
     //             '@admin/js/theme.js',
@@ -222,13 +252,18 @@ class Asset
 
     public array $css = [];
 
+    private array $cssClasses = [
+        '@sneat' => 'template-customizer-core-css',
+        '@theme' => 'template-customizer-theme-css',
+    ];
+
     //todo::rm
     // public array $fonts = [
     //     'boxicons.css'
     // ];
     public array $js = [];
     public array $headerJs = [
-//        'vendors' => '@vendors',
+        //'sneat-customizer' => '@sneat-customizer',
         'jquery'    => '@jquery',
         'dcat'    => '@dcat',
         'sneat'    => '@sneat',
@@ -236,9 +271,11 @@ class Asset
 
     public array $baseCss = [
         'sneat'    => '@sneat',
+        'sneat-main'    => '@sneat-main',
 //        'vendors'     => '@vendors',
         'toastr'      => '@toastr',
         'datatables'  => '@datatables', //todo::move to other css, load on demand
+        'perfect-scrollbar' => '@perfect-scrollbar'
 //        'dcat'        => '@dcat',
 
 
@@ -270,13 +307,17 @@ class Asset
         'validator' => '@validator',
         'layer'     => '@layer',
         'init'      => '@jquery.initialize',
+        'sneat-bootstrap'     => '@sneat-bootstrap',
         'sneat-menu'     => '@sneat-menu',
         'sneat-main'     => '@sneat-main',
+        'popper' => '@popper',
+        'perfect-scrollbar' => '@perfect-scrollbar',
     ];
 
     public array $fonts = [
         '@nunito',
-        '@boxicons'
+        '@fontawesome',
+        '@flag-icons'
     ];
 
 
@@ -330,26 +371,22 @@ class Asset
     //     'libs/datatables-buttons-bs5/buttons.bootstrap5.css'
     // ];
 
-    protected function setupTheme() {
+    protected function setupTheme() : void {
         $theme = Admin::theme();
         $dir = Admin::dir();
 
-        $t = $theme;
-        if($dir == LayoutDirectionType::RTL) {
-            $t = 'rtl/'.$theme;
-        }
-        $t .= '.css';
+        $theme = ($dir == LayoutDirectionType::RTL ? 'rtl/'.$theme : $theme ).'.css';
 
-        $this->baseCss(['@admin/css/'.$t], true);
-    }
-
-    protected function setupMode() {
+        $this->alias('@theme', [ 'css' => '@admin/css/'.$theme]);
+        $this->baseCss(['theme' => '@theme'], true);
 
         if(Admin::darkMode() == DarkModeType::DARK) {
             $this->baseCss(['css/core-dark.css'], true);
             $this->baseCss(['css/'.Admin::theme().'-dark.css'], true);
         }
+
     }
+
     // /**
     //  * 初始化主题样式.
     //  */
@@ -401,6 +438,8 @@ class Asset
         }
 
         $this->alias[$name] = $value;
+
+        return null;
     }
 
     /**
@@ -769,12 +808,15 @@ class Asset
         $html = '';
 
         foreach (array_unique($this->css) as &$v) {
+
             if (! $paths = $this->get($v, 'css')) {
                 continue;
             }
 
+            $class = isset($this->cssClasses[$v]) ? 'class="'.$this->cssClasses[$v].'"' : '';
+
             foreach ((array) $paths as $path) {
-                $html .= "<link rel=\"stylesheet\" href=\"{$this->withVersionQuery($path)}\">";
+                $html .= "<link rel=\"stylesheet\" href=\"{$this->withVersionQuery($path)}\" $class />";
             }
         }
 
@@ -836,6 +878,10 @@ class Asset
     public function headerJsToHtml()
     {
         $html = '';
+
+        // if(Admin::hasThemeCustomizer()) {
+        //     $this->headerJs(['sneat-customizer' => '@sneat-customizer']);
+        // }
 
         foreach (array_unique($this->headerJs) as &$v) {
             if (! $paths = $this->get($v, 'js')) {

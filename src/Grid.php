@@ -217,6 +217,8 @@ class Grid
         $this->setUpFilter();
 
         $this->callResolving();
+
+        Admin::requireAssets('datatables');
     }
 
     /**

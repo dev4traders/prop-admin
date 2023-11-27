@@ -4,13 +4,14 @@ namespace Dcat\Admin\Http\Controllers;
 
 use Dcat\Admin\Form;
 use Dcat\Admin\Admin;
-use Dcat\Admin\Enums\AuthLayoutType;
 use Illuminate\Http\Request;
 use Dcat\Admin\Layout\Content;
 use Illuminate\Auth\GuardHelpers;
 use Illuminate\Routing\Controller;
+use Dcat\Admin\Enums\AuthLayoutType;
 use Illuminate\Support\Facades\Lang;
 use Dcat\Admin\Traits\HasFormResponse;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Dcat\Admin\Http\Repositories\Administrator;
@@ -317,4 +318,12 @@ class AuthController extends Controller
         return admin_redirect('/');
     }
 
+    public function setLocale($key)
+    {
+        $url = request('url');
+        Session::put('locale', $key);
+        admin_toastr(__('admin.language_changed'));
+
+        return admin_redirect(admin_url($url));
+    }
 }

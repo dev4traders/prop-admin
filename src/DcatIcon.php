@@ -3,20 +3,19 @@ declare(strict_types=1);
 
 namespace Dcat\Admin;
 enum DcatIcon: string {
-	public const PREFIX = 'bx-';
-	public const BASE   = 'bx ';
+	public const PREFIX = 'fa-';
+	public const BASE   = 'fas ';
 
 	case CALENDAR = 'calendar';
 	case HOME = 'home';
 	case HELP = 'help-circle';
-	case HOME_CIRCLE = 'home-circle';
 	case SETTINGS = 'cog';
 	case LOGOUT = 'power-off';
 	case GLOBE = 'globe';
 	case DOTS_VERTICAL_ROUNDED = 'dots-vertical-rounded';
 	case MENU = 'menu';
 	case EMAIL = 'envelope';
-	case HIDE = 'hide';
+	case HIDE = 'eye-slash';
 	case PENCIL = 'pencil';
 	case MOBILE = 'mobile';
 	case INTERNET = 'edit';
@@ -25,8 +24,7 @@ enum DcatIcon: string {
 	case USER = 'user';
 	case MESSAGE_SQUARE = 'message-square';
     case TRASH = 'trash';
-    case EYE = 'bx-show-alt';
-
+    case EYE = 'eye';
 
 	public function _(bool $fullTag = FALSE, ?string $title = null) {
 		return self::format($this, $fullTag, $title);

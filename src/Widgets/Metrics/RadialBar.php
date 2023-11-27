@@ -182,7 +182,7 @@ HTML;
 <div class="card-content">
     <div class="row">
         {$content}
-        
+
         <div class="col-sm-{$this->contentWidth[1]} d-flex {$justifyClass}">
             <div></div>
             <div>{$this->renderChart()}</div>

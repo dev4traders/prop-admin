@@ -135,7 +135,7 @@ class Chart extends Widget
      * @param  array  $value
      * @return $this
      */
-    public function tooltip($value)
+    public function tip($value)
     {
         $this->options['tooltip'] = Helper::array($value);
 
@@ -202,7 +202,7 @@ class Chart extends Widget
     var options = {$options};
 
     var chart = new ApexCharts(
-        $("{$this->containerSelector}")[0], 
+        $("{$this->containerSelector}")[0],
         options
     );
     chart.render();
@@ -233,7 +233,7 @@ if (chartBox.length) {
     if (typeof response.options === 'string') {
         eval(response.options);
     }
-    
+
     setTimeout(function () {
         new ApexCharts(chartBox[0], response.options).render();
     }, 50);

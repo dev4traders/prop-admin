@@ -7,7 +7,7 @@
             <a data-pjax data-id="{{ $item['id'] ?? '' }}" @if(mb_strpos($item['uri'], '://') !== false) target="_blank" @endif
                href="{{ $builder->getUrl($item['uri']) }}"
                class="menu-link">
-                <i class="menu-icon tf-icons bx {{ $builder->getIcon($item) }}"></i>
+                <i class="menu-icon {{ $builder->getIcon($item) }}"></i>
                 <div class="text-truncate">
                     {!! $builder->translate($item['title']) !!}
                 </div>
@@ -17,7 +17,7 @@
         <li class="menu-item {{ $builder->isActive($item) ? 'open active' : '' }}">
             <a href="javascript:void(0);"  data-id="{{ $item['id'] ?? '' }}"
                class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx {{ $builder->getIcon($item) }}"></i>
+                <i class="menu-icon {{ $builder->getIcon($item) }}"></i>
                 <div class="text-truncate">
                     {!! $builder->translate($item['title']) !!}
                 </div>
