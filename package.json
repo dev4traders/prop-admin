@@ -92,7 +92,19 @@
     "flag-icons": "6.7.0",
     "highlight.js": "~11.8.0",
     "jquery": "~3.7.0",
+    "jquery-datatables-checkboxes": "1.2.13",
     "masonry-layout": "~4.2.2",
-    "perfect-scrollbar": "~1.5.5"
+    "perfect-scrollbar": "~1.5.5",
+    "datatables.net-bs5": "1.13.4",
+    "datatables.net-buttons": "2.3.6",
+    "datatables.net-buttons-bs5": "2.3.6",
+    "datatables.net-fixedcolumns-bs5": "4.2.2",
+    "datatables.net-fixedheader-bs5": "3.3.2",
+    "datatables.net-responsive": "2.4.1",
+    "datatables.net-responsive-bs5": "2.4.1",
+    "datatables.net-rowgroup-bs5": "1.3.1",
+    "datatables.net-select-bs5": "1.6.2",
+    "jszip": "3.10.1",
+    "pdfmake": "0.2.7"
   }
 }

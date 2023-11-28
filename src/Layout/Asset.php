@@ -37,11 +37,11 @@ class Asset
                 '@admin/js/main.js',
             ],
         ],
-        // '@sneat-customizer' => [
-        //     'js' => [
-        //         '@admin/js/template-customizer.js',
-        //     ],
-        // ],
+        '@sneat-customizer' => [
+            'js' => [
+                '@admin/js/template-customizer.js',
+            ],
+        ],
         '@sneat-bootstrap' => [
             'js' => [
                 '@admin/js/bootstrap.js',
@@ -155,20 +155,12 @@ class Asset
             'js' => '@admin/dcat/plugins/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.js',
             'css' => '@admin/dcat/plugins/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.min.css',
         ],
-    //     '@theme' => [
-    //         'js' => [
-    //             '@admin/js/theme.js',
-    //         ],
-    //         'css' => [
-    //             '@admin/css/theme.css',
-    //         ],
-    //     ],
-    //     '@vendors' => [
-    //         'js'  => '@admin/dcat/plugins/vendors.min.js',
-    //         'css' => '@admin/dcat/plugins/vendors.min.css',
-    //     ],
         '@jquery.initialize' => [
             'js' => '@admin/dcat/plugins/jquery.initialize/jquery.initialize.min.js',
+        ],
+        '@color' => [
+            'js' => '@admin/dcat/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js',
+            'css' => '@admin/dcat/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css',
         ],
     //     '@grid-extension' => [
     //         'js' => '@admin/dcat/extra/grid-extend.js',
@@ -222,17 +214,6 @@ class Asset
     //     '@jquery.inputmask' => [
     //         'js' => '@admin/dcat/plugins/input-mask/jquery.inputmask.bundle.min.js',
     //     ],
-    //     '@apex-charts' => [
-    //         'js' => '@admin/dcat/plugins/charts/apexcharts.min.js',
-    //     ],
-    //     '@fontawesome-iconpicker' => [
-    //         'js' => '@admin/dcat/plugins/fontawesome-iconpicker/dist/js/fontawesome-iconpicker.js',
-    //         'css' => '@admin/dcat/plugins/fontawesome-iconpicker/dist/css/fontawesome-iconpicker.min.css',
-    //     ],
-    //     '@color' => [
-    //         'js' => '@admin/dcat/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js',
-    //         'css' => '@admin/dcat/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css',
-    //     ],
     //     '@qrcode' => [
     //         'js' => '@admin/dcat/plugins/jquery-qrcode/dist/jquery-qrcode.min.js',
     //     ],
@@ -257,10 +238,6 @@ class Asset
         '@theme' => 'template-customizer-theme-css',
     ];
 
-    //todo::rm
-    // public array $fonts = [
-    //     'boxicons.css'
-    // ];
     public array $js = [];
     public array $headerJs = [
         //'sneat-customizer' => '@sneat-customizer',
@@ -272,41 +249,18 @@ class Asset
     public array $baseCss = [
         'sneat'    => '@sneat',
         'sneat-main'    => '@sneat-main',
-//        'vendors'     => '@vendors',
         'toastr'      => '@toastr',
         'datatables'  => '@datatables', //todo::move to other css, load on demand
         'perfect-scrollbar' => '@perfect-scrollbar'
-//        'dcat'        => '@dcat',
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     ];
 
     public array $baseJs = [
-//        'adminlte'  => '@adminlte',
         'toastr'    => '@toastr',
         'pjax'      => '@pjax',
         'validator' => '@validator',
         'layer'     => '@layer',
-        'init'      => '@jquery.initialize',
+        //todo::chec and rm
+        //'init'      => '@jquery.initialize',
         'sneat-bootstrap'     => '@sneat-bootstrap',
         'sneat-menu'     => '@sneat-menu',
         'sneat-main'     => '@sneat-main',
@@ -336,16 +290,8 @@ class Asset
     //     'dcat/plugins/select/select2.full.min.js',
     //     'dcat/extra/grid-extend.js',
     //     //'dcat/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js',
-
-    //     //'libs/jquery/jquery.js',
-    //     'libs/popper/popper.js',
-    //     'js/bootstrap.js',
-    //     'libs/perfect-scrollbar/perfect-scrollbar.js',
-    //     'js/menu.js',
-    //     'js/main.js',
     //     'js/ui-popover.js'
     // ];
-
     //todo::rm/check
     // public $headerJs = [
     //     'libs/jquery/jquery.js',
@@ -357,18 +303,6 @@ class Asset
     //     'js/config.js'
     //     // 'vendors' => '@vendors',
     //     // 'dcat'    => '@dcat',
-    // ];
-
-    // private array $baseCss = [
-    //     'css/core.css',
-    //     'dcat/plugins/switchery/switchery.min.css',
-    //     'dcat/plugins/select/select2.min.css',
-    //     'css/nprogress.css',
-
-    //     // paid version
-    //     'libs/datatables-bs5/datatables.bootstrap5.css',
-    //     'libs/datatables-responsive-bs5/responsive.bootstrap5.css',
-    //     'libs/datatables-buttons-bs5/buttons.bootstrap5.css'
     // ];
 
     protected function setupTheme() : void {
@@ -537,7 +471,6 @@ class Asset
     }
 
     /**
-     * 设置需要载入的css脚本.
      *
      * @param  string|array  $css
      */
@@ -561,16 +494,7 @@ class Asset
         );
     }
 
-    // public function lib(string|array $lib)
-    // {
-    //     $this->libs = array_merge(
-    //         $this->libs,
-    //         (array) $lib
-    //     );
-    // }
-
     /**
-     * 设置需要载入的基础css脚本.
      *
      * @param  array  $css
      */
@@ -584,7 +508,6 @@ class Asset
     }
 
     /**
-     * 设置需要载入的js脚本.
      *
      * @param  string|array  $js
      */
@@ -600,7 +523,6 @@ class Asset
     }
 
     /**
-     * 根据别名获取资源路径.
      *
      * @param  string  $path
      * @param  string  $type
@@ -626,7 +548,6 @@ class Asset
     }
 
     /**
-     * 获取静态资源完整URL.
      *
      * @param  string  $path
      * @return string
@@ -647,7 +568,6 @@ class Asset
     }
 
     /**
-     * 获取真实路径.
      *
      * @param  string|null  $path
      * @return string|null
@@ -674,7 +594,6 @@ class Asset
     }
 
     /**
-     * 判断是否是路径别名.
      *
      * @param  mixed  $value
      * @return bool
@@ -685,7 +604,6 @@ class Asset
     }
 
     /**
-     * 判断别名是否存在.
      *
      * @param $value
      * @return bool
@@ -696,7 +614,6 @@ class Asset
     }
 
     /**
-     * 判断是否含有别名.
      *
      * @param  string  $value
      * @return bool
@@ -707,7 +624,6 @@ class Asset
     }
 
     /**
-     * 设置在head标签内加载的js.
      *
      * @param  string|array  $js
      */
@@ -721,7 +637,6 @@ class Asset
     }
 
     /**
-     * 设置基础js脚本.
      *
      * @param  array  $js
      * @param  bool  $merge
@@ -736,7 +651,6 @@ class Asset
     }
 
     /**
-     * 设置js代码.
      *
      * @param  string|array  $script
      * @param  bool  $direct
@@ -754,7 +668,6 @@ class Asset
     }
 
     /**
-     * 设置css代码.
      *
      * @param  string  $style
      */
@@ -767,7 +680,6 @@ class Asset
     }
 
     /**
-     * 字体css脚本路径.
      */
     protected function addFontCss()
     {
@@ -783,7 +695,6 @@ class Asset
     }
 
     /**
-     * 合并基础css脚本.
      */
     protected function mergeBaseCss()
     {
@@ -839,7 +750,6 @@ class Asset
     }
 
     /**
-     * 合并基础js脚本.
      */
     protected function mergeBaseJs()
     {
