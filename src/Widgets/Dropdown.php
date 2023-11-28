@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Dcat\Admin\Widgets;
 
+use Dcat\Admin\Admin;
 use Dcat\Admin\DcatIcon;
 use Illuminate\Support\Str;
 use Dcat\Admin\Support\Helper;

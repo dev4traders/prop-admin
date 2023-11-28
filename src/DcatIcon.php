@@ -12,7 +12,7 @@ enum DcatIcon: string {
 	case SETTINGS = 'cog';
 	case LOGOUT = 'power-off';
 	case GLOBE = 'globe';
-	case DOTS_VERTICAL_ROUNDED = 'dots-vertical-rounded';
+	case DOTS_VERTICAL_ROUNDED = 'ellipsis-v';
 	case MENU = 'menu';
 	case EMAIL = 'envelope';
 	case HIDE = 'eye-slash';

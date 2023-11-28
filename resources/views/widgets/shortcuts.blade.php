@@ -1,6 +1,6 @@
 <li class="nav-item dropdown-shortcuts navbar-dropdown dropdown me-2 me-xl-0">
     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-    <i class="bx bx-grid-alt bx-sm"></i>
+    <i class="fas fa-grid"></i>
     </a>
     <div class="dropdown-menu dropdown-menu-end py-0">
     <div class="dropdown-menu-header border-bottom">

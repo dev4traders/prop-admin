@@ -2,6 +2,7 @@
 
 namespace Dcat\Admin\Widgets;
 
+use Dcat\Admin\Admin;
 use Illuminate\Contracts\Support\Renderable;
 
 class Accordion extends Widget implements Renderable
@@ -13,6 +14,9 @@ class Accordion extends Widget implements Renderable
     public function __construct()
     {
         $this->id('accordion-'.uniqid());
+
+        Admin::js('@sneat-main');
+        Admin::js('@sneat-bootstrap');
     }
 
     /**

@@ -5,17 +5,17 @@
     <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
     <li>
         <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
-        <span class="align-middle"><i class="bx bx-sun me-2"></i>{{ __('admin.mode_light') }}</span>
+        <span class="align-middle"><i class="fas fa-sun me-2"></i>{{ __('admin.mode_light') }}</span>
         </a>
     </li>
     <li>
         <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
-        <span class="align-middle"><i class="bx bx-moon me-2"></i>{{ __('admin.mode_dark') }}</span>
+        <span class="align-middle"><i class="fa fa-moon me-2"></i>{{ __('admin.mode_dark') }}</span>
         </a>
     </li>
     <li>
         <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
-        <span class="align-middle"><i class="bx bx-desktop me-2"></i>{{ __('admin.mode_system') }}</span>
+        <span class="align-middle"><i class="fa fa-desktop me-2"></i>{{ __('admin.mode_system') }}</span>
         </a>
     </li>
     </ul>

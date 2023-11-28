@@ -7,17 +7,17 @@
         <ul class="dropdown-menu dropdown-menu-start dropdown-styles" data-bs-popper="static">
         <li>
             <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
-            <span class="align-middle"><i class="bx bx-sun me-2"></i>Light</span>
+            <span class="align-middle"><i class="fas fa-sun me-2"></i>Light</span>
             </a>
         </li>
         <li>
             <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
-            <span class="align-middle"><i class="bx bx-moon me-2"></i>Dark</span>
+            <span class="align-middle"><i class="fas fa-moon me-2"></i>Dark</span>
             </a>
         </li>
         <li>
             <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
-            <span class="align-middle"><i class="bx bx-desktop me-2"></i>System</span>
+            <span class="align-middle"><i class="fas fa-desktop me-2"></i>System</span>
             </a>
         </li>
         </ul>
