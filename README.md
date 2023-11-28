@@ -1,4 +1,7 @@
 <code>prop-admin</code> is the set of ready to use components for your Trading Dashboard
+
+![Prop Trading Dashboard](/resources/assets/img/user-dashoard-cropped.png "Prop Dashboard")
+
 # Possible Uses
 - Create nice-looking and user-friendly dashboards for prop trading firms
 - Customize user and manager area within the dashboard
