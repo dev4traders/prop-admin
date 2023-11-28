@@ -1,6 +1,6 @@
 <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
     <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false">
-    <i class="bx bx-sm bx-{{ $current_mode }}"></i>
+    <i class="fas fa-{{ $current_mode }}"></i>
     </a>
     <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
     <li>

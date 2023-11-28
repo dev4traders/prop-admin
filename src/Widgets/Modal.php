@@ -340,7 +340,7 @@ JS;
 
         $this->on('show.bs.modal', <<<JS
 body.html('<div style="min-height:150px"></div>').loading();
-        
+
 setTimeout(function () {
     target.trigger('{$this->target}:load')
 }, {$this->delay});
@@ -373,7 +373,7 @@ JS
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">{$this->renderTitle()}</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">{$this->renderContent()}</div>
             {$this->renderFooter()}
@@ -420,7 +420,7 @@ HTML;
         }
 
         return <<<HTML
-<span style="cursor: pointer" data-toggle="modal" data-target="#{$this->id()}">{$button}</span>
+<span style="cursor: pointer" data-bs-toggle="modal" data-bs-target="#{$this->id()}">{$button}</span>
 HTML;
     }
 }

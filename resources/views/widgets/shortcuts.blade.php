@@ -17,7 +17,7 @@
             @foreach($items as $item)
             <div class="dropdown-shortcuts-item col">
                 <span class="dropdown-shortcuts-icon bg-label-secondary rounded-circle mb-2">
-                <i class="bx bx-{{ $item['icon']}} fs-4"></i>
+                <i class="fas fa-{{ $item['icon']}} fs-4"></i>
                 </span>
                 <a href="{{ $item['url']}}" class="stretched-link">{{ $item['title']}}</a>
                 <small class="text-muted mb-0">{{ $item['description']}}</small>
