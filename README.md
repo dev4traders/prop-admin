@@ -18,7 +18,7 @@ We are looking for active contributors:
 <code>prop-admin</code> based on the following plugins or services:
 - [Laravel](https://laravel.com/)
 - [Bootstrap5](https://getbootstrap.com/)
-- [sneat-admin](https://themeselection.com/item/sneat-bootstrap-html-admin-template/)
+- [sneat-admin](https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/)
 - [dcat-admin](https://github.com/jqhph/dcat-admin)
 
 # License
