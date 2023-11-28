@@ -369,6 +369,10 @@ abstract class Widget implements Renderable
     }
 
     public function tooltip(string $html, bool $isPopover = false, PlacementType $place = PlacementType::TOP, StyleClassType $class = StyleClassType::PRIMARY, ?string $title = null) : Widget {
+        Admin::js('@sneat-main');
+        Admin::js('@sneat-bootstrap');
+        Admin::js('@popper');
+
         $this->setHtmlAttribute('data-bs-html', 'true');
 
         $toggle = $isPopover ? 'popover' : 'tooltip';

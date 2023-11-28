@@ -27,6 +27,7 @@ class Tab extends Widget {
 	];
 
 	public function __construct(int $type = self::TYPE_TAB) {
+        //Admin::requireAssets('@sneat-bootstrap');
 		$this->data['type'] = $type;
 		return $this;
 	}

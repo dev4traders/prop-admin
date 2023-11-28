@@ -53,7 +53,10 @@ class Asset
             ],
         ],
         '@popper' => [
-            'js'  => '@admin/libs/popper/popper.js',
+            'js'  => [
+                '@admin/libs/popper/popper.js',
+                '@admin/js/ui-popover.js'
+            ]
         ],
         '@fontawesome' => [
             'css'  => '@admin/fonts/fontawesome.css',
@@ -162,9 +165,9 @@ class Asset
             'js' => '@admin/dcat/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js',
             'css' => '@admin/dcat/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css',
         ],
-    //     '@grid-extension' => [
-    //         'js' => '@admin/dcat/extra/grid-extend.js',
-    //     ],
+        '@grid-extension' => [
+            'js' => '@admin/dcat/extra/grid-extend.js',
+        ],
     //     '@resource-selector' => [
     //         'js' => '@admin/dcat/extra/resource-selector.js',
     //     ],
@@ -290,7 +293,6 @@ class Asset
     //     'dcat/plugins/select/select2.full.min.js',
     //     'dcat/extra/grid-extend.js',
     //     //'dcat/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js',
-    //     'js/ui-popover.js'
     // ];
     //todo::rm/check
     // public $headerJs = [
