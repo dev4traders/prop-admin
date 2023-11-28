@@ -566,7 +566,7 @@ class Builder implements FieldsCollection
         $attributes['action'] = $this->action();
         $attributes['method'] = Arr::get($options, 'method', 'post');
         $attributes['accept-charset'] = 'UTF-8';
-        $attributes['data-toggle'] = 'validator';
+        $attributes['data-bs-toggle'] = 'validator';
         $attributes['class'] = Arr::get($options, 'class');
 
         if ($this->hasFile()) {

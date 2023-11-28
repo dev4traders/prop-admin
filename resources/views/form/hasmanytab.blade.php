@@ -24,7 +24,7 @@
     <ul class="nav nav-tabs">
         @foreach($forms as $pk => $form)
             <li class="nav-item ">
-                <a href="#{{ $relationName . '_' . $pk }}" class="nav-link @if ($form == reset($forms)) active @endif " data-toggle="tab">
+                <a href="#{{ $relationName . '_' . $pk }}" class="nav-link @if ($form == reset($forms)) active @endif " data-bs-toggle="tab">
                     {{ $pk }} <i class="feather icon-alert-circle text-red d-none"></i>
                 </a>
                 <i class="close-tab feather icon-trash text-red"></i>
@@ -32,7 +32,7 @@
         @endforeach
 
     </ul>
-    
+
     <div class="tab-content has-many-{{$columnClass}}-forms">
 
         @foreach($forms as $pk => $form)
@@ -44,7 +44,7 @@
 
     <template class="nav-tab-tpl">
         <li class="new nav-item">
-            <a href="#{{ $relationName . '_new_' . \Dcat\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}" class="nav-link" data-toggle="tab">
+            <a href="#{{ $relationName . '_new_' . \Dcat\Admin\Form\NestedForm::DEFAULT_KEY_NAME }}" class="nav-link" data-bs-toggle="tab">
                 &nbsp;New {{ \Dcat\Admin\Form\NestedForm::DEFAULT_KEY_NAME }} <i class="feather icon-alert-circle text-red d-none"></i>
             </a>
             <i class="close-tab feather icon-trash text-red" ></i>
@@ -60,7 +60,7 @@
 
 <script>
     var container = '.has-many-{{ $columnClass }}';
-    
+
     $(container+' > .nav').off('click', 'i.close-tab').on('click', 'i.close-tab', function(){
         var $navTab = $(this).siblings('a');
         var $pane = $($navTab.attr('href'));

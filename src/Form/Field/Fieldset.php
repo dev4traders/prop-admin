@@ -27,7 +27,7 @@ JS;
 <div>
     <div class="mt-2 text-center mb-2 form-divider">
       <span>
-        <a data-toggle="collapse" href="#{$this->name}" class="{$this->name}-title">
+        <a data-bs-toggle="collapse" href="#{$this->name}" class="{$this->name}-title">
           <i class="fa fa-angle-double-up"></i>&nbsp;&nbsp;{$title}
         </a>
       </span>

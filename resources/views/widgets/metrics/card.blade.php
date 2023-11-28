@@ -24,7 +24,7 @@
 
         @if(! empty($dropdown))
         <div class="dropdown chart-dropdown">
-            <button class="btn btn-sm btn-light shadow-0 dropdown-toggle p-0 waves-effect" data-toggle="dropdown">
+            <button class="btn btn-sm btn-light shadow-0 dropdown-toggle p-0 waves-effect" data-bs-toggle="dropdown">
                 {{ current($dropdown) }}
             </button>
             <div class="dropdown-menu dropdown-menu-right">

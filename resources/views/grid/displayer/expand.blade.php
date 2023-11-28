@@ -1,5 +1,5 @@
 <div>
-    <span class="grid-expand" data-url="{{ $url }}" data-inserted="0" data-id="{{ $key }}" data-key="{{ $dataKey }}" data-toggle="collapse" data-target="#grid-collapse-{{ $dataKey }}">
+    <span class="grid-expand" data-url="{{ $url }}" data-inserted="0" data-id="{{ $key }}" data-key="{{ $dataKey }}" data-bs-toggle="collapse" data-target="#grid-collapse-{{ $dataKey }}">
        <a href="javascript:void(0)"><i class="feather icon-chevrons-right"></i>  {!! $button !!}</a>
     </span>
     <template class="grid-expand-{{ $dataKey }}">
