@@ -14,7 +14,6 @@ class Card extends Widget
     protected $content;
     protected $footer;
     protected $tools = [];
-    protected $divider = false;
     protected $padding;
 
     public function __construct($title = '', $content = null)
@@ -29,16 +28,6 @@ class Card extends Widget
 
         $this->class('card');
         $this->id('card-'.Str::random(8));
-    }
-
-    /**
-     * @return $this
-     */
-    public function withHeaderBorder()
-    {
-        $this->divider = true;
-
-        return $this;
     }
 
     /**
@@ -117,8 +106,7 @@ class Card extends Widget
             'footer'     => $this->toString($this->footer),
             'tools'      => $this->tools,
             'attributes' => $this->formatHtmlAttributes(),
-            'padding'    => $this->padding,
-            'divider'    => $this->divider,
+//            'padding'    => $this->padding,
         ];
     }
 }

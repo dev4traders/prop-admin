@@ -1,12 +1,10 @@
-<div {!! $attributes !!}>
-    @if ($title || $tools)
+<div class="card bg-{{ $class}}">
+    @if ($title || $tool)
         <div class="card-header d-flex align-items-center justify-content-between">
             <h5 class="card-title">{!! $title !!}</h5>
-            <div class="box-tools pull-right">
-                @foreach($tools as $tool)
-                    {!! $tool !!}
-                @endforeach
-            </div>
+            @if ($tool)
+                {!! $tool !!}
+            @endif
         </div>
     @endif
     <div class="card-body">
