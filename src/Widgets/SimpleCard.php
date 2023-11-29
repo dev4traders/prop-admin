@@ -58,6 +58,7 @@ class SimpleCard extends Widget
             'footer'     => $this->toString($this->footer),
             'tool'      => $this->tool,
             'class' => $this->getHtmlAttribute('class'),
+            'style' => $this->getHtmlAttribute('style'),
         ];
     }
 }

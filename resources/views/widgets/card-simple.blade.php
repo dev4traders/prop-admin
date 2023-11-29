@@ -1,4 +1,4 @@
-<div class="card bg-{{ $class}}">
+<div class="card h-100 {{ empty($class) ? '' : 'bg-'.$class }}" style="{{ $style }}">
     @if ($title || $tool)
         <div class="card-header d-flex align-items-center justify-content-between">
             <h5 class="card-title">{!! $title !!}</h5>
@@ -11,7 +11,7 @@
         {!! $content !!}
     </div>
     @if($footer)
-    <div class="card-footer">
+    <div class="card-footer mt-0 pt-0">
         {!! $footer !!}
     </div>
     @endif
