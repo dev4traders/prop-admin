@@ -14,9 +14,9 @@ class Progress implements Renderable
 
     public function __construct(
         StyleClassType $class = StyleClassType::PRIMARY,
-        private int $value,
-        private int $min = 0,
-        private int $max = 100,
+        private float|int $value,
+        private float|int $min = 0,
+        private float|int $max = 100,
         private ?string $text = null,
         ?string $height = null,
         private bool $stripped = false,
@@ -48,21 +48,21 @@ class Progress implements Renderable
         return $this;
     }
 
-    public function value(int $value) : Progress
+    public function value(float|int $value) : Progress
     {
         $this->value = $value;
 
         return $this;
     }
 
-    public function min(int $value) : Progress
+    public function min(float|int $value) : Progress
     {
         $this->min = $value;
 
         return $this;
     }
 
-    public function max(int $value) : Progress
+    public function max(float|int $value) : Progress
     {
         $this->max = $value;
 

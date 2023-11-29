@@ -25,12 +25,14 @@ class Tab extends Widget {
     protected string $title = '';
     protected bool $isFill = false;
     protected int $active = -1;
+    protected ?\Closure $builder = null;
 
     protected TabButtonType $buttonType = TabButtonType::TAB;
 
-	public function __construct(TabButtonType $buttonType = TabButtonType::TAB) {
+	public function __construct(TabButtonType $buttonType = TabButtonType::TAB, ?\Closure $builder = null) {
 
 		$this->buttonType = $buttonType;
+        $this->builder = $builder;
 
 		return $this;
 	}
@@ -38,42 +40,44 @@ class Tab extends Widget {
 	/**
 	 * Add a tab and its contents.
 	 *
-	 * @param string $title
-	 * @param string|Renderable $content
-	 * @param bool $active
-	 * @param string|null $id
-	 *
 	 * @return $this
 	 */
-	public function add(string $title, string $content, bool $active = FALSE, $icon = FALSE, int $badge = 0, $id = NULL): Tab {
+	public function add( string $title, string|Renderable $content, ?string $id = null, bool $active = FALSE, ?string $icon = null, ?string $badge = null ): Tab {
+
+        if(empty($id))
+            $id = (string)mt_rand();
+
+        $count = count($this->tabs);
+        $button = new TabButton($count+1, $id, $title, null, $icon, $badge, $active);
+
 		$this->tabs[] = [
-			'id' => $id ?: mt_rand(),
-			'title' => $title,
+			'id' => $id,
+			'button' => $button,
 			'content' => $this->toString($this->formatRenderable($content)),
-			'icon' => $icon,
-			'badge' => $badge,
             'type' => TabContentType::TEXT,
 		];
 
         if($active)
-            $this->active = count($this->tabs) - 1;
+            $this->active = $count;
 
 		return $this;
 	}
 
-    public function addLink(string $title, string $href, bool $active = false, $icon = FALSE, int $badge = 0) : Tab
+    public function addLink(string $title, string $href, bool $active = false, ?string $icon = null, ?string $badge = null) : Tab
     {
+        $id = (string)mt_rand();
+        $count = count($this->tabs);
+
+        $button = new TabButton($count+1,$id, $title, $href, $icon, $badge, $active);
+
         $this->tabs[] = [
-            'id'      => mt_rand(),
-            'title'   => $title,
-			'icon' => $icon,
-			'badge' => $badge,
-            'href'    => $href,
+            'id'      => $id,
+            'button'   => $button,
             'type' => TabContentType::LINK,
         ];
 
         if($active)
-            $this->active = count($this->tabs) - 1;
+            $this->active = $count;
 
         return $this;
     }
@@ -107,6 +111,7 @@ class Tab extends Widget {
             'active' => $this->active,
             'title' => $this->title,
             'tabs' => $this->tabs,
+            'builder' => $this->builder,
             'button_type' => $this->buttonType,
             'content_type' => $this->contentType,
             'fill' => $this->isFill,

@@ -7,14 +7,14 @@ use Dcat\Admin\Widgets\Widget;
 
 class IconWithToolTip extends Widget
 {
-    public function __construct(protected DcatIcon $icon, string $text)
+    public function __construct(protected string $icon, string $text)
     {
         $this->tooltip($text);
     }
 
     public function render()
     {
-        $this->setHtmlAttribute('class', $this->icon->_());
+        $this->setHtmlAttribute('class', $this->icon);
         $atr = $this->formatHtmlAttributes();
 
         return <<<HTML
