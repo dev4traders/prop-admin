@@ -2,11 +2,11 @@
 
 namespace Dcat\Admin\Widgets\ApexCharts;
 
+use Illuminate\Support\Str;
 use Dcat\Admin\Support\Helper;
+use Dcat\Admin\Widgets\Widget;
 use Dcat\Admin\Support\JavaScript;
 use Dcat\Admin\Traits\InteractsWithApi;
-use Dcat\Admin\Widgets\Widget;
-use Illuminate\Support\Str;
 
 /**
  * Class Chart.
@@ -209,7 +209,6 @@ JS
             return;
         }
 
-        // 没有指定容器选择器，则需自动生成
         $this->setHtmlAttribute([
             'id' => $id,
         ]);
