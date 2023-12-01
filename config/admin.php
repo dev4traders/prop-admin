@@ -30,9 +30,11 @@ return [
 
     // theme-default, theme-semi-dark, theme-bordered
     'theme' => 'theme-default',
+    'has_theme_customizer' => false, //merge to array
 
     'layout' => [
         'has_menu_collapser' => false,
+
         'auth_type' => AuthLayoutType::BASIC,
 
         'type' => LayoutType::VERTICAL,
@@ -46,7 +48,7 @@ return [
         // layout-menu-collapsed & layout-menu-fixed & layout-navbar-fixed & layout-footer-fixed
         'initials' => [
             Admin::CONTENT_INITIAL_MENU_FIXED,
-            //Admin::CONTENT_INITIAL_MENU_COLLAPSED,
+            Admin::CONTENT_INITIAL_MENU_COLLAPSED,
             Admin::CONTENT_INITIAL_NAV_FIXED,
             Admin::CONTENT_INITIAL_FOOTER_FXED,
         ],
@@ -137,9 +139,9 @@ return [
     //todo::rm
     'allow-reset-password' => env('ALLOW_RESET_PASSWORD', false),
     //todo::rm
-    'login-image' => env('LOGIN_IMAGE', 'images/login.png'),
+    'login-image' => env('LOGIN_IMAGE', 'img/login.png'),
     //todo::rm
-    'login-background-image' => env('LOGIN_BACKGROUND_IMAGE', 'images/login-bg.jpg'),
+    'login-background-image' => env('LOGIN_BACKGROUND_IMAGE', 'img/login-bg.jpg'),
 
 
     /*
@@ -165,7 +167,7 @@ return [
     |
     */
     //todo:rm
-    //'logo-image'      => env('APP_LOGO_IMAGE', 'images/logo.png'),
+    //'logo-image'      => env('APP_LOGO_IMAGE', 'img/logo.png'),
 
     /*
     |--------------------------------------------------------------------------
@@ -178,7 +180,7 @@ return [
     |
     */
     //todo:rm
-    'logo-mini' => env('APP_LOGO_MINI', 'images/logo-mini.png'),
+    'logo-mini' => env('APP_LOGO_MINI', 'img/logo-mini.png'),
 
     /*
     |--------------------------------------------------------------------------

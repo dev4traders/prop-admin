@@ -539,6 +539,10 @@ class Admin
         return config('admin.layout.dark_mode');
     }
 
+    public static function hasThemeCustomizer() : bool {
+        return config('admin.has_theme_customizer');
+    }
+
     public static function authLayoutType() : AuthLayoutType {
         return config('admin.layout.auth_type');
     }

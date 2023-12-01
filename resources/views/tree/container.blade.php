@@ -49,7 +49,7 @@
     </div>
 </div>
 
-<script require="@jquery.nestable">
+<script require="@jstree,@jquery.nestable">
     var id = '{{ $id }}';
     var tree = $('#'+id);
 

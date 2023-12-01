@@ -270,7 +270,7 @@ class Asset
         'pjax'      => '@pjax',
         'validator' => '@validator',
         'layer'     => '@layer',
-        //todo::chec and rm
+//        'init'      => '@jquery.initialize',
         'sneat-bootstrap'     => '@sneat-bootstrap',
         'sneat-menu'     => '@sneat-menu',
         'sneat-main'     => '@sneat-main',
