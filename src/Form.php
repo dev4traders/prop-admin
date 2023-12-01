@@ -1332,7 +1332,7 @@ class Form implements Renderable
      * @param  int  $labelWidth
      * @return $this
      */
-    public function width($fieldWidth = 8, $labelWidth = 2)
+    public function width($fieldWidth = 10, $labelWidth = 2)
     {
         $this->builder->fields()->each(function ($field) use ($fieldWidth, $labelWidth) {
             /* @var Field $field  */

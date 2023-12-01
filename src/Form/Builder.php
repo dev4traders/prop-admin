@@ -86,7 +86,7 @@ class Builder implements FieldsCollection
      */
     protected $width = [
         'label' => 2,
-        'field' => 8,
+        'field' => 10,
     ];
 
     /**
@@ -306,7 +306,7 @@ class Builder implements FieldsCollection
      * @param  int  $label
      * @return $this
      */
-    public function width($field = 8, $label = 2)
+    public function width($field = 10, $label = 2)
     {
         $this->width = [
             'label' => $label,

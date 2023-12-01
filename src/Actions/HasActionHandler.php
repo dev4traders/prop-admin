@@ -118,7 +118,7 @@ Dcat.Action({
 JS;
 
         Admin::script($script);
-        Admin::js('admin/dcat/extra/action.js');
+        Admin::js('@admin/dcat/extra/action.js');
     }
 
     /**

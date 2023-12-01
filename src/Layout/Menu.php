@@ -106,7 +106,7 @@ class Menu
         return view($this->view, ['item' => &$item, 'builder' => $this])->render();
     }
 
-    public function getIcon(array $item) : string
+    public function getIcon(array $item) : ?string
     {
         $icon = $item['icon'];
 

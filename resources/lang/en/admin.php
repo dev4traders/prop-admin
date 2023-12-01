@@ -170,6 +170,7 @@ return [
         'next' => 'Next',
         'previous' => 'Previous',
     ],
+    'domain'                => 'Domain',
     'role'                  => 'Role',
     'permission'            => 'Permission',
     'route'                 => 'Route',

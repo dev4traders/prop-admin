@@ -61,6 +61,9 @@ class Asset
         '@fontawesome' => [
             'css'  => '@admin/fonts/fontawesome.css',
         ],
+        '@feather' => [
+            'css'  => '@admin/fonts/feather/feather.css',
+        ],
         '@flag-icons' => [
             'css'  => '@admin/fonts/flag-icons.css',
         ],
@@ -168,25 +171,29 @@ class Asset
         '@grid-extension' => [
             'js' => '@admin/dcat/extra/grid-extend.js',
         ],
+        '@jstree' => [
+            'js'  => '@admin/dcat/plugins/jstree-theme/jstree.min.js',
+            'css' => '@admin/dcat/plugins/jstree-theme/themes/proton/style.min.css',
+        ],
+        '@select-table' => [
+            'js' => '@admin/dcat/extra/select-table.js',
+        ],
+        '@bootstrap-datetimepicker' => [
+            'js'  => '@admin/dcat/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js',
+            'css' => '@admin/dcat/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css',
+        ],
+        '@moment' => [
+            'js' => [
+                '@admin/dcat/plugins/moment/moment-with-locales.min.js',
+            ],
+        ],
+        '@moment-timezone' => [
+            'js' => [
+                '@admin/dcat/plugins/moment-timezone/moment-timezone-with-data.min.js',
+            ],
+        ],
     //     '@resource-selector' => [
     //         'js' => '@admin/dcat/extra/resource-selector.js',
-    //     ],
-    //     '@select-table' => [
-    //         'js' => '@admin/dcat/extra/select-table.js',
-    //     ],
-    //     '@bootstrap-datetimepicker' => [
-    //         'js'  => '@admin/dcat/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js',
-    //         'css' => '@admin/dcat/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css',
-    //     ],
-    //     '@moment' => [
-    //         'js' => [
-    //             '@admin/dcat/plugins/moment/moment-with-locales.min.js',
-    //         ],
-    //     ],
-    //     '@moment-timezone' => [
-    //         'js' => [
-    //             '@admin/dcat/plugins/moment-timezone/moment-timezone-with-data.min.js',
-    //         ],
     //     ],
     //     '@jstree' => [
     //         'js'  => '@admin/dcat/plugins/jstree-theme/jstree.min.js',
@@ -245,6 +252,7 @@ class Asset
     public array $headerJs = [
         //'sneat-customizer' => '@sneat-customizer',
         'jquery'    => '@jquery',
+        'init'      => '@jquery.initialize',
         'dcat'    => '@dcat',
         'sneat'    => '@sneat',
     ];
@@ -263,7 +271,6 @@ class Asset
         'validator' => '@validator',
         'layer'     => '@layer',
         //todo::chec and rm
-        //'init'      => '@jquery.initialize',
         'sneat-bootstrap'     => '@sneat-bootstrap',
         'sneat-menu'     => '@sneat-menu',
         'sneat-main'     => '@sneat-main',
@@ -274,6 +281,7 @@ class Asset
     public array $fonts = [
         '@nunito',
         '@fontawesome',
+        '@feather',
         '@flag-icons'
     ];
 

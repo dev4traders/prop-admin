@@ -157,7 +157,7 @@ class Form implements Renderable
      */
     protected $width = [
         'label' => 2,
-        'field' => 8,
+        'field' => 10,
     ];
 
     /**
@@ -518,7 +518,7 @@ class Form implements Renderable
      * @param  int  $labelWidth
      * @return $this
      */
-    public function width($fieldWidth = 8, $labelWidth = 2)
+    public function width($fieldWidth = 10, $labelWidth = 2)
     {
         $this->width = [
             'label' => $labelWidth,
@@ -623,7 +623,7 @@ class Form implements Renderable
         return <<<HTML
 <div class="box-footer row d-flex">
     <div class="col-md-2"> &nbsp;</div>
-    <div class="col-md-8">{$this->renderResetButton()}{$this->renderSubmitButton()}</div>
+    <div class="col-md-10">{$this->renderResetButton()}{$this->renderSubmitButton()}</div>
 </div>
 HTML;
     }
